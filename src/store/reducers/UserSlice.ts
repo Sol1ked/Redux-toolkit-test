@@ -17,34 +17,20 @@ const initialState: UserState = {
 export const userSlice = createSlice({
   name: 'user',
   initialState,
-  reducers: {
-    usersFetchingLoading(state) {
-      state.isLoading = true;
-    },
-    usersFetchingSuccess(state, action: PayloadAction<IUser[]>) {
-      state.isLoading = false;
-      state.error = '';
-      state.users = action.payload;
-    },
-    usersFetchingError(state, action: PayloadAction<string>) {
-      state.isLoading = false;
-      state.error = action.payload;
-    },
-  },
+  reducers: {},
   extraReducers: (builder) => {
     builder
-
-      .addCase(fetchUsers.pending, (state) => {})
-
-      .addCase(fetchUsers.fulfilled, (state, action) => {
+      .addCase(fetchUsers.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(fetchUsers.fulfilled, (state, action: PayloadAction<IUser[]>) => {
         state.isLoading = false;
         state.error = '';
         state.users = action.payload;
       })
-
       .addCase(fetchUsers.rejected, (state, action) => {
         state.isLoading = false;
-        state.error = action.payload;
+        state.error = (action.payload as string) || 'error';
       });
   },
 });
