@@ -1,0 +1,33 @@
+{
+  "posts": [
+    {
+      "id": 4,
+      "title": "meow1",
+      "body": "typicode"
+    },
+    {
+      "id": 5,
+      "title": "meow",
+      "body": "typicode"
+    },
+    {
+      "id": 6,
+      "title": "json-server6",
+      "body": "typicode"
+    },
+    {
+      "title": "Aboba",
+      "body": "Aboba",
+      "id": 7
+    },
+    {
+      "title": "ssfsdfsdf",
+      "body": "ssfsdfsdf",
+      "id": 8
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}
